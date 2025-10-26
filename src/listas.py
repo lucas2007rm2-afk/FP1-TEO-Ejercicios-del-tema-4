@@ -9,8 +9,23 @@ def inserta_ordenado(lista_nombres: list[str], nombre: str) -> None:
     lista_nombres (list[str]): Lista de nombres ordenada por longitud.
     nombre (str): Nombre a insertar.
     """
-    # TODO: Implementa esta función
-    pass
+    lista_longitud=list()
+
+    for n in lista_nombres.copy():
+        lista_longitud.append(len(n))
+    
+    if lista_longitud==sorted(lista_longitud):
+        if lista_longitud==[] or len(nombre)>=lista_longitud.pop():
+            lista_nombres.append(nombre)
+        else:
+            for i,c in enumerate(lista_longitud):
+             if len(nombre)<c:
+                lista_nombres.insert(i,nombre)
+                break
+    
+    else:
+        return None
+
 
 def busca_duplicados(lista: list) -> list:
     """
@@ -22,10 +37,13 @@ def busca_duplicados(lista: list) -> list:
     Devuelve:
     list: Lista con los elementos duplicados.
     """
-    # TODO: Implementa esta función:
-    # - usando count
-    # - usando slicing y sin usar count
-    pass
+    res=[]
+    for i in lista:
+        if lista.count(i)>1 and (i in res)==False:
+            res.append(i)
+
+    return res
+    
 
 def genera_aleatorios(n: int, minimo: int, maximo: int) -> list[int]:
     """
