@@ -38,10 +38,16 @@ def busca_duplicados(lista: list) -> list:
     list: Lista con los elementos duplicados.
     """
     res=[]
-    for i in lista:
-        if lista.count(i)>1 and (i in res)==False:
-            res.append(i)
+    #for i in lista:
+    #    if lista.count(i)>1 and (i in res)==False:
+    #        res.append(i)
+    i=0
+    while i<=len(lista)-1:
 
+        if lista[i] in lista[i+1:] and lista[i] not in res:
+            res.append(lista[i])
+
+        i+=1
     return res
     
 
@@ -58,8 +64,22 @@ def genera_aleatorios(n: int, minimo: int, maximo: int) -> list[int]:
     Devuelve:
     list[int]: Lista con n números enteros aleatorios.
     """
-    # TODO: Implementa esta función
-    pass
+
+    res=[]
+
+    while n!=0:
+        n1= random.randint(minimo,maximo)
+        n2= random.randint(minimo,maximo)
+        if n1!=n2 and n1 not in res[-1:]:
+            res.append(n1)
+            res.append(n2)
+            n-=2
+
+    return res
+        
+
+    
+    
 
 def intercala_listas(lista1: list, lista2: list) -> list:
     """
