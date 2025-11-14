@@ -92,8 +92,33 @@ def intercala_listas(lista1: list, lista2: list) -> list:
     Devuelve:
     list: Lista resultante de intercalar las dos listas.
     """
-    # TODO: Implementa esta función
-    pass
+    res=[]
+    long1=len(lista1)
+    long2=len(lista2)
+    for i,j in zip(lista1,lista2):
+        res.append(i)
+        res.append(j)
+    
+    if long1>long2:
+        if long2!=0:
+            k=long1-long2
+            while k<long1:
+                res.append(lista1[k])
+                k+=1
+        else:
+            res=lista1
+
+    if long2>long1:
+        if long1!=0:
+            k=long2-long1
+            while k<long2:
+                res.append(lista2[k])
+                k+=1
+        else:
+            res=lista2
+
+    return res
+
 
 def mezcla_ordenadas(lista1: list, lista2: list) -> list:
     """
@@ -106,8 +131,8 @@ def mezcla_ordenadas(lista1: list, lista2: list) -> list:
     Devuelve:
     list: Lista resultante de mezclar las dos listas ordenadas.
     """
-    # TODO: Implementa esta función
-    pass
+    res=intercala_listas(lista1,lista2)
+    return sorted(res)
 
 def ordena_bubble_sort(lista: list) -> None:
     """
@@ -116,5 +141,13 @@ def ordena_bubble_sort(lista: list) -> None:
     Parámetros:
     lista (list[int]): Lista de números enteros a ordenar.
     """    
-# TODO: Implementa esta función
-    pass
+    while True:
+        ordenada=True
+        for i,j in zip(lista,lista[1:]):
+            if i>j:
+                lista[lista.index(i)],lista[lista.index(j)+1]=j,i
+                ordenada=False
+        if ordenada == True:
+            break
+
+        
