@@ -45,7 +45,10 @@ def multiplica_matrices(m1: list[list[int | float]], m2: list[list[int | float]]
 
     for i,x in enumerate(m1):
         for j,y in enumerate(x):
-            for k,z
+            for k,z in enumerate(m2[j]):
+                res[i][k]+=y*z
+                
+    return res
 
 
 

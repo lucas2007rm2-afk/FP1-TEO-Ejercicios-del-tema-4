@@ -79,6 +79,6 @@ def test_multiplica_matrices():
     assert multiplica_matrices(m1, m2) is None
 
 # Descomenta las llamadas de los tests que quieras ejecutar
-test_suma_matrices()
-#test_multiplica_matrices()
+#test_suma_matrices()
+test_multiplica_matrices()
 print("Todos los casos de prueba pasaron correctamente.")

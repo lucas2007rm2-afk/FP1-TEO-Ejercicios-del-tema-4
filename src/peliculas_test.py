@@ -74,7 +74,7 @@ def test_encuentra_pelicula_mayor_recaudacion():
     assert encuentra_pelicula_mayor_recaudacion(peliculas, "No existe") == None
 
 # Descomenta las llamadas de los tests que quieras ejecutar
-test_lee_peliculas()
+#test_lee_peliculas()
 #test_existe_pelicula()
 #test_todas_peliculas_director_genero()
 #test_construye_lista_titulos_actor()
